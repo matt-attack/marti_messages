@@ -40,6 +40,10 @@ link_directories(${LIBRARY_DIRS})
 set(LIBS ${rosidl_default_generators_LIBRARIES} ${ament_cmake_LIBRARIES}
   ${std_msgs_LIBRARIES})
 
+install(
+  FILES mapping_rules.yaml
+  DESTINATION share/${PROJECT_NAME})
+
 ament_export_dependencies(rosidl_default_generators)
 ament_export_dependencies(ament_cmake)
 ament_export_dependencies(std_msgs)
