@@ -6,7 +6,6 @@ if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 11)
 endif()
 
-find_package(${BUILD_DEPS} REQUIRED)
 find_package(ament_cmake REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
@@ -41,7 +40,13 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/SaveRoute.srv"
   "srv/SetRoute.srv" 
   "srv/UpdateRouteMetadata.srv"
-  DEPENDENCIES builtin_interfaces std_msgs geometry_msgs sensor_msgs marti_common_msgs)
+  DEPENDENCIES 
+  builtin_interfaces
+  std_msgs
+  geometry_msgs
+  sensor_msgs
+  marti_common_msgs
+)
 
 set(INCLUDE_DIRS ${${BUILD_DEPS}_INCLUDE_DIRS} ${ament_cmake_INCLUDE_DIRS})
 include_directories(${INCLUDE_DIRS})
