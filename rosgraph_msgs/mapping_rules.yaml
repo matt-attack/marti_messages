@@ -1,0 +1,5 @@
+-
+  ros1_package_name: 'rosgraph_msgs'
+  ros1_message_name: 'Log'
+  ros2_package_name: 'swri_roscpp_msgs'
+  ros2_package_name: 'Log'
